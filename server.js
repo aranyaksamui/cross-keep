@@ -16,6 +16,15 @@ app.route("/")
     })
     .post();
 
+app.route("/create")
+    .get((req, res) => {
+        res.render("create")
+    })
+    .post((req, res) => {
+
+    });
+
 app.listen(3000, () => {
     console.log("Server started on port 3000");
 });
+
