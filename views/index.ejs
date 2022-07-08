@@ -1,22 +1,7 @@
 <%- include("partials/header"); -%>
 
     <main class="d-flex">
-        <nav class="d-flex">
-            <div class="profile d-flex">
-                <img src="https://img.myloview.com/stickers/user-icon-isolated-on-white-background-profile-symbol-modern-simple-vector-icon-for-website-design-mobile-app-ui-vector-illustration-400-216346252.jpg"
-                    alt="">
-                <h3>Aranyak Samui</h3>
-            </div>
-            <ul class="options d-flex">
-                <a href=""><li>Pinned notes</li></a>
-                <a href=""><li>Favourites</li></a>
-                <a href=""><li>Settings</li></a>
-            </ul>
-            <div class="buttons-class d-flex">
-                <button class="buttons profile-btn">My profile</button>
-                <button class="buttons logout">Log out</button>
-            </div>
-        </nav>
+        <%- include("partials/sidebar"); -%>
         <section class="workspace d-flex">
             <div class="topbar d-flex">
                 <h1 class="heading">Cross Keep</h1>

@@ -1,12 +1,12 @@
 <%- include("partials/header"); -%>
 
-<main class="create-main">
-    <h1>Create note:</h1>
-    <form action="/create" method="POST" class="create-form d-flex">
-        <input type="text" name="title" placeholder="Write your innovation...">
-        <textarea name="body"></textarea>
-        <button type="submit" class="submit-btn">Done</button>
-    </form>
-</main>
+    <main class="create-main">
+        <h1>Create note:</h1>
+        <form action="/create" method="POST" class="create-form d-flex">
+            <input type="text" name="title" placeholder="Write your innovation..." required>
+            <textarea name="body" required></textarea>
+            <button type="submit" class="submit-btn">Done</button>
+        </form>
+    </main>
 
-<%- include("partials/footer"); -%>
+    <%- include("partials/footer"); -%>
