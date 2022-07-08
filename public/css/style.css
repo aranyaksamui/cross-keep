@@ -83,7 +83,6 @@ nav {
 .buttons {
     padding: 6.5% 20%;
     background-color: #ffc800;
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.166);
     border: none;
     border-radius: 10px;
     color: #ffffff;
@@ -164,6 +163,16 @@ nav {
     border-radius: 15px;
 }
 
+.no-notes-message {
+    position: absolute;
+    top: 50%;
+    left: 59%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #aaaaaa;
+}
+
 .note {
     margin-right: 2.5%;
     padding: 2%;
@@ -197,8 +206,8 @@ nav {
     position: relative;
     width: 70%;
     flex-direction: column;
-    border: 2px solid #323232;
     border-radius: 15px;
+    box-shadow: 0px 5.5px 18px rgba(0, 0, 0, 0.103);
 }
 
 .create-form input, textarea {

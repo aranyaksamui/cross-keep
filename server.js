@@ -9,10 +9,13 @@ app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+const notesArray = [];
+
 // Handling routes and requests
 app.route("/")
     .get((req, res) => {
-        res.render("index")
+        res.render("index", {notes: notesArray})
+        console.log(notesArray);
     })
 
 app.route("/create")
@@ -20,7 +23,13 @@ app.route("/create")
         res.render("create")
     })
     .post((req, res) => {
-
+        const {title, body} = req.body;
+        const note = {
+            title: title,
+            body: body
+        }
+        notesArray.push(note);
+        res.redirect("/");
     });
 
 app.listen(3000, () => {

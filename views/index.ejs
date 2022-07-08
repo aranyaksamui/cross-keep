@@ -22,12 +22,16 @@
                 <h1 class="heading">Cross Keep</h1>
             </div>
             <div class="notes-area d-flex">
-                <div class="note">
-                    <h2>First note</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nulla ipsa fugit alias velit ea esse
-                        possimus in nam illo! Similique error nemo ipsa, quaerat voluptatum in recusandae. Autem,
-                        voluptatum.</p>
-                </div>
+                <% if(!notes.length) { %>
+                    <h2 class="no-notes-message">No notes to cover. Create notes by tapping on the '+' icon.</h2>
+                <% } else { %>
+                    <% notes.forEach((note) => { %>
+                        <div class="note">
+                            <h2><%= note.title %></h2>
+                            <p><%= note.body %></p>
+                        </div>
+                    <% }) %> 
+                <% } %> 
             </div>
         </section>
         <a href="/create" class="add-btn"><button>+</button></a>
