@@ -12,6 +12,12 @@ body {
     display: flex;
 }
 
+
+
+/**========= HOME PAGE STYLES =========**/
+
+
+
 /* Main body */
 
 /* Side bar */
@@ -171,3 +177,78 @@ nav {
     margin-bottom: 2%;
 }
 
+
+
+/**========= CREATE PAGE STYLES =========**/
+
+
+
+.create-main {
+    padding: 4% 15%;
+}
+
+.create-main h1 {
+    margin-bottom: 4.5%;
+    font-size: 2.7rem;
+    font-weight: 700;
+}
+
+.create-form {
+    position: relative;
+    width: 70%;
+    flex-direction: column;
+    border: 2px solid #323232;
+    border-radius: 15px;
+}
+
+.create-form input, textarea {
+    font-family: 'Lato', sans-serif;
+    border: none;
+}
+
+.create-form input {
+    height: 10vh;
+    padding: 1% 6%;
+    font-size: 1.7rem;
+    font-weight: 500;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.create-form textarea {
+    height: 52vh;
+    padding: 3% 6%;
+    font-size: 1.5rem;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.create-form input:focus {
+    background-color: #f9f9f9;
+}
+
+.create-form textarea:focus {
+    background-color: #f9f9f9;
+}
+
+.submit-btn {
+    padding: 1.5% 5%;
+    background-color: #ffa600;
+    box-shadow: 0px 4.5px 12px rgba(0, 0, 0, 0.103);
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    width: fit-content;
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    transition: ease-in-out 0.15s;
+    background-color: #ffc800;
+}

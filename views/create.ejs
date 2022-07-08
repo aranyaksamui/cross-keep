@@ -1,3 +1,12 @@
 <%- include("partials/header"); -%>
-<h1>THIS IS THE CREATE PAGE</h1>
+
+<main class="create-main">
+    <h1>Create note:</h1>
+    <form action="/create" method="POST" class="create-form d-flex">
+        <input type="text" name="title" placeholder="Write your innovation...">
+        <textarea name="body" id="" cols="30" rows="10"></textarea>
+        <button type="submit" class="submit-btn">Create</button>
+    </form>
+</main>
+
 <%- include("partials/footer"); -%>
