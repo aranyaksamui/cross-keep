@@ -14,7 +14,6 @@ app.route("/")
     .get((req, res) => {
         res.render("index")
     })
-    .post();
 
 app.route("/create")
     .get((req, res) => {

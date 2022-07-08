@@ -28,6 +28,76 @@ nav {
     justify-content: space-evenly;
 }
 
+/* Profile */
+.profile {
+    padding: 5%;
+    height: 150px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile img {
+    width: 100px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.103);
+    border-radius: 100%;
+}
+
+.profile h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/* Options */
+.options {
+    margin-top: 10%;
+    height: 220px;
+    width: 65%;
+    flex-direction: column;
+    list-style: none;
+    padding: 5% ;
+    margin-bottom: 10%;
+}
+
+.options a {
+    font-size: 1.25rem;
+    margin-bottom: 18%;
+    color: #7c7c7c;
+    text-decoration: none;
+}
+
+/* Buttons */
+.buttons-class {
+    width: 65%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.buttons {
+    padding: 6.5% 20%;
+    background-color: #ffc800;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.166);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-btn {
+    background-color: #ffc131;
+    color: #ffffff;
+    margin-bottom: 7%;
+}
+
+.logout {
+    background-color: #e0e0e0;
+    color: #323232;
+}
+
 /* Workspace */
 .workspace {
     width: calc(100vw - 18%);
@@ -77,7 +147,7 @@ nav {
 .add-btn button {
     background: none;
     border: none;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     color: #ffffff;
     cursor: pointer;
 }
