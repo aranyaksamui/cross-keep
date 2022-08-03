@@ -14,6 +14,186 @@ body {
 
 
 
+/**========= START PAGE STYLES =========**/
+
+
+
+.start-main {
+    height: 100vh;
+    padding: 0% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.features {
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.features h1 {
+    font-family: 'Lobster', cursive;
+    color: #ffc800;
+    font-weight: 200;
+    font-size: 3.6rem;
+    text-align: right;
+}
+
+.features-div {
+    width: 100%;
+    height: 75%;
+    position: relative;
+}
+
+.features-div div {
+    position: absolute;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(116, 54, 0, 0.133);
+}
+
+.take-note {
+    height: 65%;
+    width: 45%;
+    background-color: #ffd06a;
+    top: 0;
+    left: 0;
+}
+
+.url {
+    height: 35%;
+    width: 45%;
+    background-color: #ffea9d;
+    top: 0;
+    right: 0;
+}
+
+.imgs {
+    height: 55%;
+    width: 45%;
+    background-color: #ffea9d;
+    bottom: 0;
+    right: 0;
+}
+
+.favs {
+    height: 25%;
+    width: 45%;
+    background-color: #ffd89d;
+    bottom: 0;
+    left: 0;
+}
+
+.hr {
+    width: 1px;
+    height: 60%;
+    background-color: rgb(31, 31, 31);
+}
+
+.user-auth {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#register-form {
+    display: flex;
+}
+
+#login-form {
+    display: none;
+}
+
+.auth-form {
+    width: 100%;
+    height: 85%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.name-fields {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name-fields input {
+    width: 45%;
+}
+
+.auth-field-dimensions {
+    width: 90%;
+    height: 45px;
+}
+
+.auth-input-field {
+    font-family: 'Lato', sans-serif;
+    width: 90%;
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid rgb(55, 55, 55);
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.auth-input-field::placeholder {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    transform: translateY(8px);
+    font-weight: 500;
+}
+
+.auth-btn {
+    font-family: 'Lato', sans-serif;
+    width: fit-content;
+    padding: 3.5% 15%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(31, 31, 31);
+    cursor: pointer;
+}
+
+.auth-btn:hover {
+    transition: ease-in-out 0.17s;
+    color: #fff;
+    background-color: #ffdc5e;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+}
+
+.auth-tab-btn {
+    background: none;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+}
+
+#register {
+    display: none;
+}
+
+#login {
+    display: block;
+}
+
+.auth-tab-btn img {
+    height: 51.2px;
+}
+
+
+
 /**========= HOME PAGE STYLES =========**/
 
 
@@ -128,6 +308,33 @@ nav {
     color: #ffc800;
 }
 
+.search-div {
+    width: 120px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-div input {
+    width: 73%;
+    border: none;
+    border-bottom: 1.5px solid #5a5a5a;
+    font-size: 1rem;
+}
+
+.search-div input::placeholder {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
+
+.search-div a {
+    height: 22px;
+}
+
+.search-div h4 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
 .add-btn {
     width: 60px;
     height: 60px;
@@ -182,8 +389,15 @@ nav {
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.103);
     border-radius: 12px;
 }
+
 .note h2 {
     margin-bottom: 2%;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 

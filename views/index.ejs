@@ -2,24 +2,38 @@
 
     <main class="d-flex">
         <%- include("partials/sidebar"); -%>
-        <section class="workspace d-flex">
-            <div class="topbar d-flex">
-                <h1 class="heading">Cross Keep</h1>
-            </div>
-            <div class="notes-area d-flex">
-                <% if(!notes.length) { %>
-                    <h2 class="no-notes-message">No notes to cover. Create notes by tapping on the '+' icon.</h2>
-                <% } else { %>
-                    <% notes.forEach((note) => { %>
-                        <div class="note">
-                            <h2><%= note.title %></h2>
-                            <p><%= note.body %></p>
-                        </div>
-                    <% }) %> 
-                <% } %> 
-            </div>
-        </section>
-        <a href="/create" class="add-btn"><button>+</button></a>
+            <section class="workspace d-flex">
+                <div class="topbar d-flex">
+                    <h1 class="heading">Cross Keep</h1>
+                    <div class="d-flex search-div">
+                        <a href="/search"><img src="icons/search-magnify.svg" alt="" height="22px"></a>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="notes-area d-flex">
+                    <% if(!notes.length) { %>
+                        <h2 class="no-notes-message">No notes to cover. Create notes by tapping on the '+' icon.</h2>
+                    <% } else { %>
+                        <% notes.forEach((note) => { %>
+                            <div class="note">
+                                <h2><%= note.title %></h2>
+                                <p><%= note.body %></p>
+                                <div class="d-flex" style="margin-top: 3%;">
+                                    <form action="/delete/<%= note._id  %>" method="POST" style="margin-right: 5%;">
+                                        <button type="submit" class="delete-btn">
+                                            <img src="icons/delete-bin.svg" alt="" height="20px">
+                                        </button>
+                                    </form>
+                                    <a href="/edit/<%= note._id %> ">
+                                        <img src="icons/edit-pencil.svg" alt="" height="20px">
+                                    </a>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            </section>
+            <a href="/create" class="add-btn"><button>+</button></a>
     </main>
 
-    <%- include("partials/footer"); -%>
+<%- include("partials/footer"); -%>

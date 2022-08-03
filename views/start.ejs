@@ -1,0 +1,76 @@
+<%- include("partials/header") -%>
+
+    <main class="start-main">
+
+        <div class="features">
+            <h1>Cross Keep</h1>
+            <div class="features-div">
+                <div class="take-note"></div>
+                <div class="url"></div>
+                <div class="imgs"></div>
+                <div class="favs"></div>
+            </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="user-auth">
+            <h1 id="auth-heading">Register</h1>
+            <form action="/login" method="POST" class="auth-form" id="login-form">
+                <input type="email" name="email" id="email" class="auth-input-field auth-field-dimensions" placeholder="Email">
+                <input type="password" name="password" id="password" class="auth-input-field auth-field-dimensions" placeholder="Password">
+                <button type="submit" class="auth-btn">Start storing your life</button>
+            </form>
+            <form action="/register" method="POST" class="auth-form" id="register-form">
+                <div class="name-fields">
+                    <input type="text" name="first_name" id="fname" class="auth-input-field" placeholder="First name">
+                    <input type="text" name="last_name" id="lname" class="auth-input-field" placeholder="Last name">
+                </div>
+                <input type="email" name="email" id="email" class="auth-input-field auth-field-dimensions" placeholder="Email">
+                <input type="password" name="password" id="password" class="auth-input-field auth-field-dimensions" placeholder="Password">
+                <button type="submit" class="auth-btn">Start storing your life</button>
+            </form>
+            <button class="auth-tab-btn" id="register" onclick="loadTab('register')">
+                <img src="../public/icons/register-btn.svg" alt="">
+            </button>
+            <button class="auth-tab-btn" id="login" onclick="loadTab('login')">
+                <img src="../public/icons/login-btn.svg" alt="">
+            </button>
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function loadTab(tab) {
+
+            switch (tab) {
+                case 'register':
+                    document.querySelector("#login-form").style.display = "none";
+                    document.querySelector("#register-form").style.display = "flex";
+                    document.querySelector("#auth-heading").innerHTML = "Register";
+                    document.querySelector("#register").style.display = "none";
+                    document.querySelector("#login").style.display = "block";
+                    document.querySelector(".auth-btn").innerHTML = "Start storing your life";
+                    document.querySelector(".user-auth").style.height = "400px";
+                    break;
+            
+                case 'login':
+                    document.querySelector("#register-form").style.display = "none";
+                    document.querySelector("#login-form").style.display = "flex";
+                    document.querySelector("#auth-heading").innerHTML = "Login";
+                    document.querySelector("#register").style.display = "block";
+                    document.querySelector("#login").style.display = "none";
+                    document.querySelector(".auth-btn").innerHTML = "Lets go!";
+                    document.querySelector(".user-auth").style.height = "350px";
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+
+    </script>
+
+<%- include("partials/footer") -%>

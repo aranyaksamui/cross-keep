@@ -9,6 +9,7 @@
     },
     "author": "Aranyak Samui",
     "license": "ISC",
+    "type": "module",
     "dependencies": {
         "dotenv": "^16.0.1",
         "ejs": "^3.1.8",
