@@ -11,6 +11,29 @@
                     </div>
                 </div>
                 <div class="notes-area d-flex">
+                    <% pinnedNotes.forEach((pinnedNote) => { %>
+                        <div class="note">
+                            <h2><%= pinnedNote.title %></h2>
+                            <p><%= pinnedNote.body %></p>
+                            <div class="d-flex" style="margin-top: 3%;">
+                                <form action="/delete/<%= pinnedNote._id  %>" method="POST" style="margin-right: 5%;">
+                                    <button type="submit" class="delete-btn">
+                                        <img src="icons/delete-bin.svg" alt="" height="20px">
+                                    </button>
+                                </form>
+                                <a href="/edit/<%= pinnedNote._id %> ">
+                                    <img src="icons/edit-pencil.svg" alt="" height="20px">
+                                </a>
+                                <form action="/favourites/<%= pinnedNote._id %>" method="POST">
+                                    <button type="submit">Add to fav</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+                <br>
+                <br>
+                <div class="notes-area d-flex">
                     <% if(!notes.length) { %>
                         <h2 class="no-notes-message">No notes to cover. Create notes by tapping on the '+' icon.</h2>
                     <% } else { %>
@@ -27,6 +50,9 @@
                                     <a href="/edit/<%= note._id %> ">
                                         <img src="icons/edit-pencil.svg" alt="" height="20px">
                                     </a>
+                                    <form action="/favourites/<%= note._id %>" method="POST">
+                                        <button type="submit">Add to fav</button>
+                                    </form>
                                 </div>
                             </div>
                         <% }) %>

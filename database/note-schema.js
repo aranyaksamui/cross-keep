@@ -11,7 +11,15 @@ const notesSchema = mongoose.Schema(
         body: {
             require: true,
             type: String
-        }
+        },
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+        },
+        pin: {
+            type: Boolean,
+            default: false,
+        },
     }
 )
 
