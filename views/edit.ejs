@@ -2,7 +2,7 @@
 
     <main class="create-main">
         <h1>Edit note:</h1>
-        <form action="/edit/<%= note._id %>" method="POST" class="create-form d-flex">
+        <form action="/notes/edit/<%= note._id %>" method="POST" class="create-form d-flex">
             <input type="text" name="title" placeholder="Write your innovation..." value="<%= note.title %>" required>
             <textarea name="body" required><%= note.body %></textarea>
             <button type="submit" class="submit-btn">Done</button>

@@ -16,15 +16,15 @@
                             <h2><%= pinnedNote.title %></h2>
                             <p><%= pinnedNote.body %></p>
                             <div class="d-flex" style="margin-top: 3%;">
-                                <form action="/delete/<%= pinnedNote._id  %>" method="POST" style="margin-right: 5%;">
+                                <form action="/notes/delete/<%= pinnedNote._id  %>" method="POST" style="margin-right: 5%;">
                                     <button type="submit" class="delete-btn">
                                         <img src="icons/delete-bin.svg" alt="" height="20px">
                                     </button>
                                 </form>
-                                <a href="/edit/<%= pinnedNote._id %> ">
+                                <a href="/notes/edit/<%= pinnedNote._id %> ">
                                     <img src="icons/edit-pencil.svg" alt="" height="20px">
                                 </a>
-                                <form action="/favourites/<%= pinnedNote._id %>" method="POST">
+                                <form action="/notes/favourites/<%= pinnedNote._id %>" method="POST">
                                     <button type="submit">Add to fav</button>
                                 </form>
                             </div>
@@ -42,15 +42,15 @@
                                 <h2><%= note.title %></h2>
                                 <p><%= note.body %></p>
                                 <div class="d-flex" style="margin-top: 3%;">
-                                    <form action="/delete/<%= note._id  %>" method="POST" style="margin-right: 5%;">
+                                    <form action="/notes/delete/<%= note._id  %>" method="POST" style="margin-right: 5%;">
                                         <button type="submit" class="delete-btn">
                                             <img src="icons/delete-bin.svg" alt="" height="20px">
                                         </button>
                                     </form>
-                                    <a href="/edit/<%= note._id %> ">
+                                    <a href="/notes/edit/<%= note._id %> ">
                                         <img src="icons/edit-pencil.svg" alt="" height="20px">
                                     </a>
-                                    <form action="/favourites/<%= note._id %>" method="POST">
+                                    <form action="/notes/favourites/<%= note._id %>" method="POST">
                                         <button type="submit">Add to fav</button>
                                     </form>
                                 </div>
@@ -59,7 +59,7 @@
                     <% } %>
                 </div>
             </section>
-            <a href="/create" class="add-btn"><button>+</button></a>
+            <a href="/notes/create" class="add-btn"><button>+</button></a>
     </main>
 
 <%- include("partials/footer"); -%>

@@ -19,14 +19,14 @@
             <h1 id="auth-heading">Register</h1>
 
             <!-- Login -->
-            <form action="/login" method="POST" class="auth-form" id="login-form">
+            <form action="/users/login" method="POST" class="auth-form" id="login-form">
                 <input type="email" name="username" id="email" class="auth-input-field auth-field-dimensions" placeholder="Email" required>
                 <input type="password" name="password" id="password" class="auth-input-field auth-field-dimensions" placeholder="Password" required>
                 <button type="submit" class="auth-btn">Start storing your life</button>
             </form>
 
             <!-- Register -->
-            <form action="/register" method="POST" class="auth-form" id="register-form">
+            <form action="/users/register" method="POST" class="auth-form" id="register-form">
                 <div class="name-fields">
                     <input type="text" name="first_name" id="fname" class="auth-input-field" placeholder="First name" required>
                     <input type="text" name="last_name" id="lname" class="auth-input-field" placeholder="Last name" required>
