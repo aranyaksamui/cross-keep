@@ -10,6 +10,8 @@
                         <input type="text" placeholder="Search...">
                     </div>
                 </div>
+                
+                <!-- Pinned notes -->
                 <div class="notes-area d-flex">
                     <% pinnedNotes.forEach((pinnedNote) => { %>
                         <div class="note">
@@ -33,6 +35,8 @@
                 </div>
                 <br>
                 <br>
+
+                <!-- User notes -->
                 <div class="notes-area d-flex">
                     <% if(!notes.length) { %>
                         <h2 class="no-notes-message">No notes to cover. Create notes by tapping on the '+' icon.</h2>
@@ -59,6 +63,8 @@
                     <% } %>
                 </div>
             </section>
+
+            <!-- Create notes -->
             <a href="/notes/create" class="add-btn"><button>+</button></a>
     </main>
 

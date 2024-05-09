@@ -2,8 +2,28 @@
 import { Note } from "../database/schemas/note-schema.js";
 import { User } from "../database/schemas/user-schema.js";
 
+
+// Get create note page
+export const getCreatePage = (req, res) => {
+    req.isAuthenticated() ? res.render("create") : res.redirect("/");
+};
+
+// Create a note
+export const createNote = async (req, res) => {
+    const { title, body } = req.body;
+    try {
+        const user = await User.findById(req.user._id);
+        const newNote = await Note.create({ title, body, owner: req.user._id });
+        user.notes.push(newNote);
+        user.save();
+        res.redirect("/users/dashboard");
+    } catch (err) {
+        console.log(err);
+    }
+};
+
 // Get note edit page
-export const getEditNotePage = (req, res) => {
+export const getUpdateNotePage = (req, res) => {
     const id = req.params.id;
     Note.findById(id, (err, foundNote) => {
         !err && res.render("edit", { note: foundNote });
@@ -36,25 +56,6 @@ export const favNote = async (req, res) => {
         const foundNote = await Note.findById(req.params.id).exec();
         foundNote.pin = !foundNote.pin;
         foundNote.save();
-        res.redirect("/users/dashboard");
-    } catch (err) {
-        console.log(err);
-    }
-};
-
-// Get create note page
-export const getCreatePage = (req, res) => {
-    req.isAuthenticated() ? res.render("create") : res.redirect("/");
-};
-
-// Create a note
-export const createNote = async (req, res) => {
-    const { title, body } = req.body;
-    try {
-        const user = await User.findById(req.user._id);
-        const newNote = await Note.create({ title, body, user });
-        user.notes.push(newNote);
-        user.save();
         res.redirect("/users/dashboard");
     } catch (err) {
         console.log(err);

@@ -38,7 +38,9 @@ app.use("/", homeRouter);
 app.use("/users", userRouter);
 app.use("/notes", notesRouter);
 
-// Listening on port 3000
-app.listen(3000 || process.env.PORT, async () => {
-    console.log(`Server started on port ${process.env.PORT}`);
+const PORT = 8000 || process.env.PORT;
+
+// Listening to port 3000
+app.listen(PORT, async () => {
+    console.log(`Server started on port ${PORT}`);
 });

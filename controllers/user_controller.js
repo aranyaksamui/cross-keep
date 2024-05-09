@@ -3,7 +3,6 @@ import passport from "passport";
 
 // Local imports
 import { User } from "../database/schemas/user-schema.js";
-import { Note } from "../database/schemas/note-schema.js";
 
 // Register a user
 export const userRegister = (req, res) => {
@@ -36,22 +35,6 @@ export const userLogin = (req, res) => {
             res.redirect("/");
         }
     });
-};
-
-// User dashboard
-export const userDashboard = async (req, res) => {
-    if (req.isAuthenticated()) {
-        try {
-            const user = req.user;
-            const foundNotes = await Note.find({ owner: user._id }).exec();
-            const foundPinnedNotes = await Note.find({ owner: user._id, pin: true }).exec();
-            res.render("index", { notes: foundNotes, pinnedNotes: foundPinnedNotes });
-        } catch (err) {
-            console.log(err);
-        }
-    } else {
-        res.redirect("/");
-    }
 };
 
 // Logout a user
