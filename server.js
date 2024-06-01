@@ -1,7 +1,7 @@
 // Import dependencies
 import ejs from "ejs";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: process.env.NODE_ENV === "production" ? "./.env.production" : "./.env.development" });
 import express from "express";
 import passport from "passport";
 import session from "express-session";
@@ -43,4 +43,5 @@ const PORT = 8000 || process.env.PORT;
 // Listening to port 3000
 app.listen(PORT, async () => {
     console.log(`Server started on port ${PORT}`);
+    console.log("The node environment is", process.env.NODE_ENV)
 });
