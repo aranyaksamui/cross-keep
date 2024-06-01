@@ -2,7 +2,7 @@
 import passport from "passport";
 
 // Local imports
-import { User } from "../database/schemas/user-schema.js";
+import { User } from "../database/schemas/user_schema.js";
 
 // Register a user
 export const userRegister = (req, res) => {

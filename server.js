@@ -11,7 +11,7 @@ import dbConnect from "./database/db.js";
 import { usePassport } from "./auth/auth.js";
 import homeRouter from "./routes/home_routes.js";
 import userRouter from "./routes/user_routes.js";
-import notesRouter from "./routes/notes_routes.js";
+import notesRouter from "./routes/note_routes.js";
 
 const app = express();
 

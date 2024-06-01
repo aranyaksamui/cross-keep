@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
 
 // Local imports
-import { User } from "../database/schemas/user-schema.js";
+import { User } from "../database/schemas/user_schema.js";
 
 // Passport middlewares
 export const usePassport = () => {

@@ -1,6 +1,6 @@
 // Local imports
-import { Note } from "../database/schemas/note-schema.js";
-import { User } from "../database/schemas/user-schema.js";
+import { Note } from "../database/schemas/note_schema.js";
+import { User } from "../database/schemas/user_schema.js";
 
 // Get the home page
 export const getHome = (req, res) => {
@@ -20,7 +20,6 @@ export const userDashboard = async (req, res) => {
             const user = req.user;
             const foundNotes = await Note.find({ owner: user._id, pin: false }).exec();
             const foundPinnedNotes = await Note.find({ owner: user._id, pin: true }).exec();
-            console.log(foundNotes);
             res.render("index", {
                 notes: foundNotes,
                 pinnedNotes: foundPinnedNotes,

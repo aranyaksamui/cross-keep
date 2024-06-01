@@ -1,6 +1,6 @@
 // Local imports
-import { Note } from "../database/schemas/note-schema.js";
-import { User } from "../database/schemas/user-schema.js";
+import { Note } from "../database/schemas/note_schema.js";
+import { User } from "../database/schemas/user_schema.js";
 
 
 // Get create note page

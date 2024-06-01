@@ -1,6 +1,6 @@
 // Importing mongoose
 import mongoose from "mongoose";
-import { notesSchema } from "./note-schema.js";
+import { notesSchema } from "./note_schema.js";
 import passportLocalMongoose from "passport-local-mongoose";
 
 // Creating schema

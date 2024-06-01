@@ -2,7 +2,7 @@
 import { Router } from "express";
 
 // Local imports
-import { createNote, deleteNote, favNote, getCreatePage, getUpdateNotePage, updateNote } from "../controllers/notes_controller.js";
+import { createNote, deleteNote, favNote, getCreatePage, getUpdateNotePage, updateNote } from "../controllers/note_controller.js";
 
 const router = Router();
 
