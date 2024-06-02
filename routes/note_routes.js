@@ -2,13 +2,13 @@
 import { Router } from "express";
 
 // Local imports
-import { createNote, deleteNote, favNote, getCreatePage, getUpdateNotePage, updateNote } from "../controllers/note_controller.js";
+import { createNote, deleteNoteAndUpdateUser, favNote, getCreatePage, getUpdateNotePage, updateNote } from "../controllers/note_controller.js";
 
 const router = Router();
 
 // Routes
 router.route("/edit/:id").get(getUpdateNotePage).post(updateNote);
-router.post("/delete/:id", deleteNote);
+router.post("/delete/:id", deleteNoteAndUpdateUser);
 router.post("/favourites/:id", favNote);
 router.route("/create").get(getCreatePage).post(createNote);
 

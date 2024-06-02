@@ -3,10 +3,11 @@
     <main class="create-main">
         <h1>Create note:</h1>
         <form action="/notes/create" method="POST" class="create-form d-flex">
-            <input type="text" name="title" placeholder="Write your innovation..." required>
+            <input type="text" name="title" placeholder="What's on your mind?" required>
             <textarea name="body" required></textarea>
-            <button type="submit" class="submit-btn">Done</button>
+            <button type="submit" class="submit-btn">Create</button>
         </form>
+        <a href="/users/dashboard"><button class="back-btn">Back</button></a>
     </main>
 
 <%- include("partials/footer"); -%>

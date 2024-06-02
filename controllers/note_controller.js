@@ -23,31 +23,27 @@ export const createNote = async (req, res) => {
 };
 
 // Get note edit page
-export const getUpdateNotePage = (req, res) => {
-    const id = req.params.id;
-    Note.findById(id, (err, foundNote) => {
-        !err && res.render("edit", { note: foundNote });
-    });
+export const getUpdateNotePage = async (req, res) => {
+    const noteId = req.params.id;
+    const foundNote = await Note.findById(noteId).catch((err) => console.log(err));
+    res.render("edit", { note: foundNote });
 };
 
 // Update the note
-export const updateNote = (req, res) => {
-    const id = req.params.id;
+export const updateNote = async (req, res) => {
+    const noteId = req.params.id;
     const { title, body } = req.body;
     const update = { title, body };
-    Note.findByIdAndUpdate(id, update, (err) => !err && res.redirect("/dashboard"));
+    await Note.findByIdAndUpdate(noteId, update).catch((err) => console.log(err))
+    res.redirect("/users/dashboard");
 };
 
 // Delete a note
-export const deleteNote = (req, res) => {
-    const id = req.params.id;
-    Note.findByIdAndDelete(id, (err) => {
-        User.findOne({ _id: req.user._id }, (err, foundUser) => {
-            foundUser.notes.pull({ _id: id });
-            foundUser.save();
-            res.redirect("/dashboard");
-        });
-    });
+export const deleteNoteAndUpdateUser = async (req, res) => {
+    const noteId = req.params.id;
+    await Note.findByIdAndDelete(noteId).catch((err) => console.log(err));
+    await User.findByIdAndUpdate(req.user._id, { $pull: { notes: noteId } });
+    res.redirect("/users/dashboard");
 };
 
 // Favorite a note

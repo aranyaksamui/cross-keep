@@ -4,58 +4,61 @@
         <%- include("partials/sidebar"); -%>
             <section class="workspace d-flex">
                 <div class="topbar d-flex">
-                    <h1 class="heading">Cross Keep</h1>
+                    <h1 class="title">Cross Keep</h1>
                     <div class="d-flex search-div">
-                        <a href="/search"><img src="icons/search-magnify.svg" alt="" height="22px"></a>
+                        <a href="/search"><img src="../icons/search.svg" alt="" class="icons"></a>
                         <input type="text" placeholder="Search...">
                     </div>
                 </div>
                 
-                <!-- Pinned notes -->
-                <div class="notes-area d-flex">
-                    <% pinnedNotes.forEach((pinnedNote) => { %>
-                        <div class="note">
-                            <h2><%= pinnedNote.title %></h2>
-                            <p><%= pinnedNote.body %></p>
-                            <div class="d-flex" style="margin-top: 3%;">
-                                <form action="/notes/delete/<%= pinnedNote._id  %>" method="POST" style="margin-right: 5%;">
-                                    <button type="submit" class="delete-btn">
-                                        <img src="icons/delete-bin.svg" alt="" height="20px">
-                                    </button>
-                                </form>
-                                <a href="/notes/edit/<%= pinnedNote._id %> ">
-                                    <img src="icons/edit-pencil.svg" alt="" height="20px">
-                                </a>
-                                <form action="/notes/favourites/<%= pinnedNote._id %>" method="POST">
-                                    <button type="submit">Add to fav</button>
-                                </form>
+                <!-- Pinned user notes -->
+                <% if(pinnedNotes.length) { %>
+                    <div class="notes-area">
+                        <% pinnedNotes.forEach((pinnedNote) => { %>
+                            <div class="note">
+                                <h3><%= pinnedNote.title %></h3>
+                                <p><%= pinnedNote.body %></p>
+                                <div class="note-actions d-flex" style="margin-top: 3%;">
+                                    <form action="/notes/delete/<%= pinnedNote._id  %>" method="POST">
+                                        <button type="submit" class="delete-btn">
+                                            <img src="../icons/delete.svg" alt="" class="icons">
+                                        </button>
+                                    </form>
+                                    <a href="/notes/edit/<%= pinnedNote._id %> ">
+                                        <img src="../icons/edit.svg" alt="" class="icons">
+                                    </a>
+                                    <form action="/notes/favourites/<%= pinnedNote._id %>" method="POST">
+                                        <button type="submit" class="bookmark-btn">
+                                            <img src="../icons/bookmark-true.svg" alt="" class="icons">
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    <% }) %>
-                </div>
-                <br>
-                <br>
+                        <% }) %>
+                    </div>
+                    <br>
+                <% } %>
 
                 <!-- User notes -->
-                <div class="notes-area d-flex">
-                    <% if(!notes.length) { %>
+                <div class="notes-area">
+                    <% if(!notes.length && !pinnedNotes.length) { %>
                         <h2 class="no-notes-message">No notes to cover. Create notes by tapping on the '+' icon.</h2>
                     <% } else { %>
                         <% notes.forEach((note) => { %>
                             <div class="note">
-                                <h2><%= note.title %></h2>
+                                <h3><%= note.title %></h3>
                                 <p><%= note.body %></p>
-                                <div class="d-flex" style="margin-top: 3%;">
-                                    <form action="/notes/delete/<%= note._id  %>" method="POST" style="margin-right: 5%;">
+                                <div class="note-actions d-flex" style="margin-top: 3%;">
+                                    <form action="/notes/delete/<%= note._id  %>" method="POST">
                                         <button type="submit" class="delete-btn">
-                                            <img src="icons/delete-bin.svg" alt="" height="20px">
+                                            <img src="../icons/delete.svg" alt="" class="icons">
                                         </button>
                                     </form>
                                     <a href="/notes/edit/<%= note._id %> ">
-                                        <img src="icons/edit-pencil.svg" alt="" height="20px">
+                                        <img src="../icons/edit.svg" alt="" class="icons">
                                     </a>
                                     <form action="/notes/favourites/<%= note._id %>" method="POST">
-                                        <button type="submit">Add to fav</button>
+                                        <button type="submit" class="bookmark-btn"><img src="../icons/bookmark-false.svg" alt="" class="icons"></button>
                                     </form>
                                 </div>
                             </div>

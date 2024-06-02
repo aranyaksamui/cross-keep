@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -195,7 +196,7 @@ body {
 
 
 
-/**========= HOME PAGE STYLES =========**/
+/**========= DASHBOARD STYLES =========**/
 
 
 
@@ -242,7 +243,7 @@ nav {
     width: 65%;
     flex-direction: column;
     list-style: none;
-    padding: 5% ;
+    padding: 5%;
     margin-bottom: 10%;
 }
 
@@ -287,22 +288,28 @@ nav {
 /* Workspace */
 .workspace {
     width: calc(100vw - 18%);
+    padding: 2rem 4rem;
     background-color: #f4f4f4;
     flex-direction: column;
 }
 
+.icons {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 /* Topbar */
 .topbar {
-    margin: 2% 5%;
     height: 70px;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.103);
     align-items: center;
     justify-content: space-between;
-    padding: 0% 5%;
+    padding: 0rem 4rem;
 }
-.heading {
+
+.title {
     font-family: 'Lobster', cursive;
     font-size: 2rem;
     font-weight: 100;
@@ -320,6 +327,7 @@ nav {
     border: none;
     border-bottom: 1.5px solid #5a5a5a;
     font-size: 1rem;
+    outline: none;
 }
 
 .search-div input::placeholder {
@@ -366,9 +374,13 @@ nav {
 }
 
 .notes-area {
-    margin: 2.5% 5%;
+    width: 100%;
+    padding: 3rem 0rem;
     height: auto;
     border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
 }
 
 .no-notes-message {
@@ -382,22 +394,38 @@ nav {
 }
 
 .note {
-    margin-right: 2.5%;
-    padding: 2%;
-    width: 30% ;
-    height: fit-content;
+    padding: 1.5rem;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background-color: #ffffff;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.103);
     border-radius: 12px;
 }
 
-.note h2 {
-    margin-bottom: 2%;
+.note-actions {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.note p {
+    font-size: 1.1rem;
+}
+
+.bookmark-btn {
+    border: none;
+    background: none;
 }
 
 .delete-btn {
     background: none;
     border: none;
+}
+
+.icons {
     cursor: pointer;
 }
 
@@ -425,7 +453,8 @@ nav {
     box-shadow: 0px 5.5px 18px rgba(0, 0, 0, 0.103);
 }
 
-.create-form input, textarea {
+.create-form input,
+textarea {
     font-family: 'Lato', sans-serif;
     border: none;
 }
@@ -437,14 +466,17 @@ nav {
     font-weight: 500;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    outline: none;
 }
 
 .create-form textarea {
     height: 52vh;
     padding: 3% 6%;
+    outline: none;
     font-size: 1.5rem;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    resize: none;
 }
 
 .create-form input:focus {
@@ -456,14 +488,13 @@ nav {
 }
 
 .submit-btn {
-    padding: 1.5% 5%;
+    padding: 0.9rem 1.8rem;
     background-color: #ffa600;
     box-shadow: 0px 4.5px 12px rgba(0, 0, 0, 0.103);
     font-weight: 600;
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
-    width: fit-content;
     position: absolute;
     right: 50px;
     bottom: 40px;
@@ -475,4 +506,20 @@ nav {
 .submit-btn:hover {
     transition: ease-in-out 0.15s;
     background-color: #ffc800;
+}
+
+.back-btn {
+    padding: 0.9rem 1.8rem;
+    background-color: #e3e3e3;
+    box-shadow: 0px 4.5px 12px rgba(0, 0, 0, 0.103);
+    font-weight: 600;
+    color: #323232;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 200px;
+    bottom: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
