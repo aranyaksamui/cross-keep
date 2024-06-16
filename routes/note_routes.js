@@ -7,9 +7,9 @@ import { createNote, deleteNoteAndUpdateUser, favNote, getCreatePage, getUpdateN
 const router = Router();
 
 // Routes
+router.route("/create").get(getCreatePage).post(createNote);
 router.route("/edit/:id").get(getUpdateNotePage).post(updateNote);
 router.post("/delete/:id", deleteNoteAndUpdateUser);
 router.post("/favourites/:id", favNote);
-router.route("/create").get(getCreatePage).post(createNote);
 
 export default router;
